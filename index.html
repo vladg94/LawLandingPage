@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Your Landing Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div id="background"></div>
+    <div id="background-overlay"></div>
+    <div id="sidebar">
+        <div class="section">
+            <div class="section-content">
+                <img id="underconstruction" src="images/underconstruction.svg" alt="Constr" width="48" height="48">
+                <p>This website is a work in progress.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-content">
+                <div class="section-content">
+                    <img id="phone" src="images/phone.svg" alt="Phone Icon" width="48" height="48">
+                    <p>123-456-789</p>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-content">
+                <img id="email" src="images/mail.svg" alt="Email Icon" width="48" height="48">
+                <p>Email: example@example.com</p>
+            </div>
+        </div>
+    </div>
+    <button id="toggle-sidebar">
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+    </button>
+    <div id="main-content">
+        <div id="svg-container">
+            <img id="svg-logo" src="images/MLO-5.svg" alt="Your Logo" width="300" height="300">
+        </div>
+    </div>
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const toggleButton = document.getElementById("toggle-sidebar");
+        let isSidebarOpen = false;
+
+        toggleButton.addEventListener("click", () => {
+            if (isSidebarOpen) {
+                sidebar.style.background = "rgba(51, 51, 51, 1)";
+            } else {
+                sidebar.style.background = "rgba(51, 51, 51, 0.5)";
+            }
+
+            if (isSidebarOpen) {
+                sidebar.style.left = "-33.3333%";
+                toggleButton.style.left = "0";
+            } else {
+                sidebar.style.left = "0";
+                toggleButton.style.left = "33.3333%";
+            }
+            isSidebarOpen = !isSidebarOpen;
+
+            toggleButton.classList.add("hidden");
+            setTimeout(() => {
+                toggleButton.classList.remove("hidden");
+            }, 300);
+        });
+    </script>
+</body>
+</html>
