@@ -9,7 +9,7 @@ body {
 }
 
 #background {
-    background-image: url('images/city_skyline.jpg');
+    background-image: url('images/city_skyline.jpeg');
     background-size: cover;
     background-position: center;
     background-color: rgba(0, 0, 0, 0.8);
